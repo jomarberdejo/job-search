@@ -149,7 +149,7 @@ h1{
     justify-content: center;
     gap: 1.6rem;
     flex-wrap: wrap;
-    margin: 50px 15%;
+    margin: 50px auto;
     color: #121212;
   }
 
