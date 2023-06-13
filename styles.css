@@ -17,10 +17,12 @@ header{
   align-items: center;
   background-color: #B2BEB513;
   padding: 10px;
+   /*
   position: sticky;
   top: 0;
   left: 0;
   z-index: 4;
+    */
 }
 
 header > *{
