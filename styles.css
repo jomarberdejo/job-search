@@ -201,41 +201,37 @@ h1{
     background-color: #007bff;
   }
 
-  @media (width <= 1110px){
-    #results{
-      flex-direction: column;
-      margin: 5%;
-    }
+  @media (max-width: 1110px) {
+  #results {
+    flex-direction: column;
+    margin: 5%;
+  }
+}
+
+@media (max-width: 873px) {
+  .queries {
+    display: block;
+    margin: 20px;
+  }
+  .queries > * {
+    margin: 20px;
+  }
+  .queries input {
+    width: 100%;
+  }
+}
+
+@media (max-width: 648px) {
+  header a {
+    display: none;
   }
 
-  @media (width <= 873px){
-    .queries{
-      display: block;
-      margin: 20px;
-    }
-    .queries > *{
-      margin: 20px;
-    }
-    .queries input{
-      width: 100%;
-  
-    }
-
+  .toggle {
+    display: block;
   }
 
-  @media (width <= 648px){
-    header a{
-      display: none;
-    }
-
-    .toggle{
-      display: block;
-    }
-      
-    #results{
-      width: 95%;
-      margin: auto;
-   }
-   
-    
+  #results {
+    width: 95%;
+    margin: auto;
   }
+}
