@@ -111,7 +111,7 @@ h1{
 .queries{
     display: flex;
     justify-content: center;
-    margin: 50px auto;
+    margin: 50px 15%;
     align-items: center;
     gap: 2rem;
     color: #333;
