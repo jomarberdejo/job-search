@@ -5,7 +5,7 @@ const searchButton = document.getElementById('searchBtn');
 
     
     searchButton.addEventListener('click', searchJobs);
-    searchButton.setAttribute('disabled', 'false');
+    
 
     function searchJobs(e) {
       queryInput.value === ''? alert("Please fill out the field") : e.preventDefault();
