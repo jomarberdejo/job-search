@@ -5,7 +5,7 @@ const searchButton = document.getElementById('searchBtn');
 
     
     searchButton.addEventListener('click', searchJobs);
-    searchButton.setAttribute('disabled', 'true');
+    searchButton.setAttribute('disabled', 'false');
 
     function searchJobs(e) {
       queryInput.value === ''? alert("Please fill out the field") : e.preventDefault();
@@ -34,11 +34,11 @@ const searchButton = document.getElementById('searchBtn');
         .then(result => {
           const jobDataList = result.data;
           displayJobInformation(jobDataList);
-          searchButton.setAttribute('disabled', 'false');
+          searchButton.setAttribute('disabled', 'true');
         })
         .catch(error => {
           console.error(error);
-          searchButton.setAttribute('disabled', 'false');
+          searchButton.setAttribute('disabled', 'true');
         });
     }
 
