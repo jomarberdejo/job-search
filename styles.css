@@ -1,0 +1,99 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito', sans-serif;
+    letter-spacing: normal;
+    line-height: 1.6;
+}
+body{
+    background-color: #B2BEB522;
+}
+h1{
+  text-align: center;
+  margin-top: 20px;
+}
+.queries{
+    display: flex;
+    justify-content: center;
+    margin: 50px auto;
+    align-items: center;
+    gap: 2rem;
+}
+.queries label{
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+.queries input{
+    height: 35px;
+    font-size: 1.1rem;
+    padding: 0 5px;
+}
+
+
+.queries button{
+    padding: 2px 8px;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+#results {
+    display: flex;
+    justify-content: center;
+    gap: 1.6rem;
+    flex-wrap: wrap;
+    margin: 50px 15%;
+  }
+
+  .card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 30px;
+    flex: 1 1 60%;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .card img {
+    margin-bottom: 8px;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+
+  .card h2 {
+    font-size: 24px;
+    margin-bottom: 8px;
+  
+  }
+
+  .card p {
+    margin-bottom: 8px;
+  }
+
+  .card pre {
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+    margin-bottom: 8px;
+    font-weight: 400;
+
+  }
+
+  .card a {
+    width: max-content;
+    color: #f2f2f2;
+    text-decoration: none;
+    border: 1px solid lightgray;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: #007bff;
+  }
+
+  @media (width <= 1110px){
+    #results{
+      flex-direction: column;
+      margin: 5%;
+    }
+  }
