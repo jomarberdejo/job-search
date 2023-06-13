@@ -8,7 +8,7 @@ const searchButton = document.getElementById('searchBtn');
     
 
     function searchJobs(e) {
-      searchButton.setAttribute('disabled', 'true');
+      searchButton.setAttribute('disabled', '');
       queryInput.value === ''? alert("Please fill out the field") : e.preventDefault();
       const query = queryInput.value; 
       const apiKey = 'f46403cfb7mshad35f9146e89e1ep113d1cjsndb129cd6a619';
@@ -35,11 +35,12 @@ const searchButton = document.getElementById('searchBtn');
         .then(result => {
           const jobDataList = result.data;
           displayJobInformation(jobDataList);
+          searchButton.removeAttribute('disabled');
           
         })
         .catch(error => {
           console.error(error);
-          searchButton.setAttribute('disabled', 'false');
+          searchButton.removeAttribute('disabled');
         });
     }
 
@@ -70,5 +71,5 @@ const searchButton = document.getElementById('searchBtn');
       });
       
       resultsContainer.innerHTML = jobHTML;
-      searchButton.setAttribute('disabled', 'false');
+      
     }
