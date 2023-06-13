@@ -9,9 +9,98 @@
 body{
     background-color: #B2BEB522;
 }
+
+header{
+  display: flex;
+  justify-content: space-between;
+  height: 90px;
+  align-items: center;
+  background-color: #B2BEB513;
+  padding: 10px;
+}
+
+header > *{
+  margin: 5px 4%;
+}
+
+header h3{
+  text-transform: uppercase;
+  font-weight: 900;
+  font-size: 1.7rem;
+  color: red;
+  font-family: cursive;
+  position: relative;
+}
+header .logo span{
+  font-family: cursive;
+}
+
+header h3::after{
+  content: "";
+  position: absolute;
+  width: 70%;
+  height: 4px;
+  background-color: blue;
+  bottom: -5px;
+  left: 0;
+  right: 0;
+  margin-inline: auto;
+}
+
+header .logo span{
+  color: blue;
+}
+
+.toggle{
+  display: none;
+}
+
+ .toggle span{
+  margin: 8px 0;
+  height: 3px;
+  background-color: blue;
+  width: 45px;
+  display: block;
+}
+
+/* .toggle .line-1{
+  width: 30px;
+}
+
+.toggle .line-2{
+  width: 50px;
+}
+
+.toggle .line-3{
+  width: 70px;
+} */
+
+
+
+header .menu{
+  display: flex;
+  gap: 1.5rem;
+}
+
+
+header a{
+  border: 1px solid red;
+  text-decoration: none;
+  padding: 4px 9px;
+  border-radius: 5px;
+  color: red;
+}
+
+header a:hover{
+  background-color: #00800033;
+}
+
 h1{
   text-align: center;
-  margin-top: 20px;
+  margin-top: 50px;
+  color: #333;
+  
+
 }
 .queries{
     display: flex;
@@ -19,6 +108,7 @@ h1{
     margin: 50px auto;
     align-items: center;
     gap: 2rem;
+    color: #333;
 }
 .queries label{
     font-size: 1.2rem;
@@ -35,11 +125,17 @@ h1{
 
 .queries button{
     padding: 2px 8px;
-    font-size: 1.1rem;
+    font-size: 1.3rem;
     cursor: pointer;
     outline: none;
-    border: 2px solid #222;
+    border: none;
     border-radius: 5px;
+    background-color: #00800099;
+
+}
+
+.queries button:hover{
+  background-color: 	#00800088;
 }
 
 #results {
@@ -48,6 +144,7 @@ h1{
     gap: 1.6rem;
     flex-wrap: wrap;
     margin: 50px 15%;
+    color: #121212;
   }
 
   .card {
@@ -117,4 +214,16 @@ h1{
   
     }
 
+  }
+
+  @media (width <= 648px){
+    header a{
+      display: none;
+    }
+
+    .toggle{
+      display: block;
+    }
+   
+    
   }
