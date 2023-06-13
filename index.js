@@ -35,7 +35,7 @@ const searchButton = document.getElementById('searchBtn');
         .then(result => {
           const jobDataList = result.data;
           displayJobInformation(jobDataList);
-          searchButton.setAttribute('disabled', 'false');
+          
         })
         .catch(error => {
           console.error(error);
@@ -68,6 +68,7 @@ const searchButton = document.getElementById('searchBtn');
           </div>
         `;
       });
-
+      
       resultsContainer.innerHTML = jobHTML;
+      searchButton.setAttribute('disabled', 'false');
     }
