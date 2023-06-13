@@ -40,13 +40,13 @@ function searchJobs(e) {
       displayJobInformation(jobDataList);
       searchButton.removeAttribute('disabled');
       queryInput.value= "";
-      pageNum.value= "";
+      pageNum.value= 1;
     })
     .catch(error => {
       console.error(error);
       searchButton.removeAttribute('disabled');
       queryInput.value= "";
-      pageNum.value= "";
+      pageNum.value= 1;
     });
 }
 
