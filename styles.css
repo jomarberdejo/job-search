@@ -41,6 +41,7 @@ h1{
     border: 2px solid #222;
     border-radius: 5px;
 }
+
 #results {
     display: flex;
     justify-content: center;
@@ -101,4 +102,19 @@ h1{
       flex-direction: column;
       margin: 5%;
     }
+  }
+
+  @media (width <= 873px){
+    .queries{
+      display: block;
+      margin: 20px;
+    }
+    .queries > *{
+      margin: 20px;
+    }
+    .queries input{
+      width: 100%;
+  
+    }
+
   }
