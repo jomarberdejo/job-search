@@ -6,18 +6,18 @@ pageNum.addEventListener('input', function() {
 });
 
 const resultsContainer = document.getElementById('results');
+const resetBtn = document.getElementById('reset-button');
 
 searchButton.addEventListener('click', searchJobs);
 
 function searchJobs(e) {
-  searchButton.setAttribute('disabled', '');
+  searchButton.disabled= true;
   queryInput.value === '' ? alert("Please fill out the field") : e.preventDefault();
   const query = queryInput.value;
   const apiKey = '759e0c73camsh6768755c61b559bp137359jsn1451d9501b34';
   const apiUrl = 'https://jsearch.p.rapidapi.com/search';
   const page = '1';
   const numPages = pageNum.value <= 0 ? 1 : pageNum.value;
-  
 
   const options = {
     method: 'GET',
@@ -38,24 +38,30 @@ function searchJobs(e) {
     .then(result => {
       const jobDataList = result.data;
       displayJobInformation(jobDataList);
-      searchButton.removeAttribute('disabled');
-      queryInput.value= "";
-      pageNum.value= 1;
+
+
+      localStorage.setItem('searchedJobs', JSON.stringify(jobDataList));
+
+      searchButton.disabled= false;
+      
+      queryInput.value = "";
+      pageNum.value = 1;
     })
     .catch(error => {
       console.error(error);
-      searchButton.removeAttribute('disabled');
-      queryInput.value= "";
-      pageNum.value= 1;
+      searchButton.disabled= false;
+      queryInput.value = "";
+      pageNum.value = 1;
     });
 }
 
 function displayJobInformation(jobDataList) {
   if (jobDataList.length === 0) {
     resultsContainer.innerHTML = "<p style= 'text-align: center;'>No results found.</p>";
+    resetBtn.style.display= "grid";
     return;
   }
-  
+
   jobDataList.sort((a, b) => {
     const dateA = new Date(a.job_posted_at_datetime_utc);
     const dateB = new Date(b.job_posted_at_datetime_utc);
@@ -92,6 +98,24 @@ function displayJobInformation(jobDataList) {
       </div>
     `;
   });
-
+  
   resultsContainer.innerHTML = jobHTML;
+  resetBtn.style.display = "block";
 }
+
+window.addEventListener('DOMContentLoaded', () => {
+  const storedJobs = localStorage.getItem('searchedJobs');
+  if (storedJobs) {
+    const jobDataList = JSON.parse(storedJobs);
+    displayJobInformation(jobDataList);
+    resetBtn.style.display = "block"; 
+  } else {
+    resetBtn.style.display = "none"; 
+  }
+});
+
+resetBtn.addEventListener('click', () => {
+  localStorage.removeItem('searchedJobs');
+  resultsContainer.innerHTML = "";
+  resetBtn.style.display = "none"; 
+});
